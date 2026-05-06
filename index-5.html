@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alexis Frye — Miss Massachusetts Teen Coed</title>
+<meta name="description" content="Official site of Alexis Frye, Miss Massachusetts Teen Coed. Book appearances, request a school or scout visit, and learn about the Grow with STEM platform." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #fafaf8;
+    --bg-alt: #f0efeb;
+    --ink: #0e0e10;
+    --ink-mid: #4a4a4f;
+    --ink-soft: #767679;
+    --red: #c8202d;
+    --red-deep: #9a1822;
+    --rule: rgba(14, 14, 16, 0.10);
+    --rule-strong: rgba(14, 14, 16, 0.22);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .display { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.02em; }
+
+  /* === NAV === */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 250, 248, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 1400px; margin: 0 auto;
+    padding: 1.1rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 2rem;
+  }
+  .brand {
+    font-family: 'Inter', sans-serif;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .brand .dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+  nav ul {
+    display: flex; gap: 2.2rem; list-style: none;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+  }
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: color .2s ease;
+    position: relative;
+    padding-bottom: 2px;
+  }
+  nav a::after {
+    content: "";
+    position: absolute; left: 0; bottom: -2px;
+    width: 0; height: 1px; background: var(--red);
+    transition: width .25s ease;
+  }
+  nav a:hover { color: var(--red); }
+  nav a:hover::after { width: 100%; }
+
+  .menu-toggle {
+    display: none; background: none; border: none;
+    cursor: pointer; color: var(--ink); font-size: 1.5rem;
+  }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    padding: 5rem 2.5rem 6rem;
+    max-width: 1400px; margin: 0 auto;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .eyebrow {
+    font-size: .72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: flex; align-items: center; gap: .8rem;
+  }
+  .eyebrow .line { width: 28px; height: 1px; background: var(--red); }
+
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+  h1.title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--red);
+  }
+  .hero-tag {
+    font-size: 1.05rem;
+    color: var(--ink-mid);
+    max-width: 28rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+  .hero-meta {
+    display: flex; gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .meta-item {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+  }
+  .meta-item strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--ink);
+    margin-top: .35rem;
+  }
+
+  .hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: .55rem;
+    padding: 1rem 1.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .2s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary:hover { background: var(--red); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--bg); }
+
+  .btn .arrow { transition: transform .2s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* Hero portrait */
+  .portrait-wrap { position: relative; }
+  .portrait {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--bg-alt);
+    position: relative;
+  }
+  .portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: contrast(1.02);
+  }
+  .portrait-badge {
+    position: absolute;
+    bottom: -1px; left: -1px;
+    background: var(--red);
+    color: var(--bg);
+    padding: 1.2rem 1.5rem;
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+  }
+  .portrait-badge .num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    display: block;
+    margin-bottom: .15rem;
+  }
+
+  /* Marquee strip */
+  .marquee {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 1.4rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .marquee-track {
+    display: inline-flex;
+    gap: 3rem;
+    animation: scroll 35s linear infinite;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    font-weight: 300;
+  }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 3rem; }
+  .marquee-track .star { color: var(--red); font-style: normal; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* === SECTIONS === */
+  section { padding: 7rem 2.5rem; position: relative; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: .72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+  h2 em { font-style: italic; color: var(--red); font-weight: 400; }
+
+  /* === ABOUT === */
+  .about { background: var(--bg-alt); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-text p {
+    margin-bottom: 1.4rem;
+    color: var(--ink-mid);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .about-text p strong { color: var(--ink); font-weight: 600; }
+
+  .credentials {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--rule-strong);
+  }
+  .credentials li {
+    list-style: none;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+  .credentials li span {
+    font-size: .68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .credentials li strong {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* === PLATFORM === */
+  .platform-hero {
+    max-width: 800px;
+    margin-bottom: 5rem;
+  }
+  .platform-hero p { color: var(--ink-mid); font-size: 1.15rem; line-height: 1.7; }
+
+  .platform-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule-strong);
+    border-left: 1px solid var(--rule-strong);
+  }
+  .pcard {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    transition: background .25s ease;
+    position: relative;
+  }
+  .pcard:hover { background: var(--bg-alt); }
+  .pcard-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--red);
+    margin-bottom: 2rem;
+  }
+  .pcard h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+  .pcard p {
+    font-size: .96rem;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  .platform-cta {
+    margin-top: 4rem;
+    padding: 4rem 3rem;
+    background: var(--ink);
+    color: var(--bg);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .platform-cta blockquote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .platform-cta blockquote::before {
+    content: "“";
+    color: var(--red);
+    font-size: 3rem;
+    line-height: 0;
+    margin-right: .2rem;
+    vertical-align: -.4em;
+  }
+  .platform-cta a {
+    color: var(--bg);
+    text-decoration: none;
+    border-bottom: 1px solid var(--red);
+    padding-bottom: 4px;
+    font-size: .78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    justify-self: end;
+    transition: color .2s ease;
+  }
+  .platform-cta a:hover { color: var(--red); }
+
+  /* === REQUEST === */
+  .request { background: var(--bg-alt); }
+  .request-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+  }
+  .request-intro p {
+    color: var(--ink-mid);
+    margin-bottom: 1.2rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+  .event-list {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule-strong);
+  }
+  .event-list h4 {
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+  .event-tags {
+    display: flex; flex-wrap: wrap; gap: .4rem;
+  }
+  .tag {
+    padding: .45rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--rule-strong);
+    font-size: .78rem;
+    color: var(--ink);
+    transition: all .2s ease;
+  }
+  .tag:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  form {
+    background: var(--bg);
+    padding: 3rem;
+    border: 1px solid var(--rule-strong);
+  }
+  .field { margin-bottom: 1.5rem; }
+  .field label {
+    display: block;
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    margin-bottom: .55rem;
+    font-weight: 600;
+  }
+  .field label .req { color: var(--red); }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: .9rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: .95rem;
+    border: 1px solid var(--rule-strong);
+    background: var(--bg);
+    color: var(--ink);
+    transition: border-color .2s ease;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--red);
+  }
+  .field textarea { resize: vertical; min-height: 110px; }
+  .field-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .form-note {
+    font-size: .82rem;
+    color: var(--ink-soft);
+    margin-top: 1.2rem;
+    line-height: 1.5;
+  }
+  .form-success {
+    display: none;
+    padding: 1.5rem;
+    background: var(--ink);
+    color: var(--bg);
+    text-align: center;
+    margin-top: 1.2rem;
+  }
+  .form-success.show { display: block; }
+  .form-success p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+
+  /* === CONNECT === */
+  .connect { padding: 9rem 2.5rem; }
+  .connect-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+  .connect-tag { color: var(--ink-mid); font-size: 1.1rem; max-width: 24rem; }
+  .socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule-strong);
+    border: 1px solid var(--rule-strong);
+  }
+  .social {
+    padding: 3rem 2.5rem;
+    background: var(--bg);
+    text-decoration: none;
+    color: var(--ink);
+    transition: all .25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+  }
+  .social:hover { background: var(--ink); color: var(--bg); }
+  .social:hover .social-label { color: var(--red); }
+  .social-label {
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: color .25s ease;
+  }
+  .social-handle {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .social-arrow {
+    margin-top: 1.5rem;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  /* === FOOTER === */
+  footer {
+    padding: 4rem 2.5rem 2.5rem;
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+    border-top: 1px solid rgba(250,250,248,.15);
+    padding-top: 3rem;
+  }
+  .footer-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .footer-mark em { font-style: italic; color: var(--red); }
+  .footer-mark + p {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(250,250,248,.5);
+    margin-top: .8rem;
+    font-weight: 500;
+  }
+  .footer-meta {
+    text-align: right;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(250,250,248,.5);
+    font-weight: 500;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    .nav-inner { padding: 1rem 1.5rem; }
+    .hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .hero { padding-top: 3rem; padding-bottom: 4rem; }
+    section { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    .hero-grid, .about-grid, .request-grid, .connect-head, .platform-cta {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .platform-cards, .socials { grid-template-columns: 1fr; }
+    .platform-cta a { justify-self: start; }
+    .field-row { grid-template-columns: 1fr; }
+    .hero-meta { flex-direction: column; gap: 1.2rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-meta { text-align: left; }
+    nav ul { display: none; }
+    .menu-toggle { display: block; }
+    nav.open ul {
+      display: flex;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: var(--bg);
+      padding: 1.5rem 1.5rem;
+      gap: 1.2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    form { padding: 2rem 1.5rem; }
+    .marquee-track { font-size: 1.1rem; }
+  }
+
+  /* === ANIMATIONS === */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { animation: rise .8s ease both; }
+  .delay-1 { animation-delay: .12s; }
+  .delay-2 { animation-delay: .24s; }
+  .delay-3 { animation-delay: .36s; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span> Alexis Frye</a>
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#request">Request</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('primary-nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="eyebrow"><span class="line"></span> Miss Massachusetts Teen Coed · 2026</div>
+        <h1 class="title">Alexis<br/><em>Frye.</em></h1>
+        <p class="hero-tag">Engineer-in-training. Founder of Grow with STEM. Reigning Miss Massachusetts Teen Coed — and on the road to nationals.</p>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            Title<strong>Miss MA Teen Coed</strong>
+          </div>
+          <div class="meta-item">
+            Studying<strong>Engineering</strong>
+          </div>
+          <div class="meta-item">
+            Platform<strong>Grow with STEM</strong>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#request">Request an Appearance <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#platform">My Platform</a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap reveal delay-2">
+        <div class="portrait">
+          <img src="headshot.jpg" alt="Alexis Frye, Miss Massachusetts Teen Coed" />
+        </div>
+        <div class="portrait-badge">
+          <span class="num">2026</span>
+          Crowned · MA Teen Coed
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Engineering <span class="star">✦</span> Pageantry <span class="star">✦</span> STEM Outreach <span class="star">✦</span> School Visits <span class="star">✦</span> Public Speaking <span class="star">✦</span> Advocacy <span class="star">✦</span></span>
+      <span>Engineering <span class="star">✦</span> Pageantry <span class="star">✦</span> STEM Outreach <span class="star">✦</span> School Visits <span class="star">✦</span> Public Speaking <span class="star">✦</span> Advocacy <span class="star">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="section-eyebrow">— 01 / About</div>
+          <h2>Meet <em>Alexis</em>.</h2>
+        </div>
+        <div class="about-text reveal delay-1">
+          <p>Alexis Frye is a 19-year-old engineering student, community organizer, and the reigning Miss Massachusetts Teen Coed. Her journey to the crown has been shaped by curiosity, persistence, and a lifelong love of figuring out how things work — even when the numbers refused to cooperate.</p>
+          <p>Diagnosed with <strong>numeric dyslexia</strong>, Alexis spent years convinced she could never pursue a STEM career. Today, she's proving the opposite — and using her title to make sure other students know that a learning difference is never the end of the story.</p>
+          <p>Beyond pageantry, she founded <strong>Grow with STEM</strong>, a community organization that brings hands-on science, technology, engineering, and math experiences to classrooms, libraries, and scout troops across Massachusetts.</p>
+
+          <ul class="credentials">
+            <li><span>Title</span><strong>Miss Massachusetts Teen Coed 2026</strong></li>
+            <li><span>Studying</span><strong>Engineering</strong></li>
+            <li><span>Founder</span><strong>Grow with STEM</strong></li>
+            <li><span>Cause</span><strong>Learning Differences & STEM Access</strong></li>
+            <li><span>Next</span><strong>Competing at Nationals</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section id="platform">
+    <div class="section-inner">
+      <div class="platform-hero reveal">
+        <div class="section-eyebrow">— 02 / Platform</div>
+        <h2>Grow with <em>STEM.</em></h2>
+        <p>A reign isn't required to have a cause — but mine has one. Through Grow with STEM, I share my story of overcoming numeric dyslexia and invite young people to discover that engineering, science, and curiosity are within their reach.</p>
+      </div>
+
+      <div class="platform-cards">
+        <div class="pcard reveal delay-1">
+          <div class="pcard-num">i.</div>
+          <h4>Schools & Classrooms</h4>
+          <p>Age-appropriate talks and hands-on STEM activities for K–12 — assemblies, single-class visits, and career-day appearances.</p>
+        </div>
+        <div class="pcard reveal delay-2">
+          <div class="pcard-num">ii.</div>
+          <h4>Libraries & Troops</h4>
+          <p>Story-time STEM sessions, badge-aligned activities for Girl Scouts and Boy Scouts, and library-hosted programs that make discovery feel like play.</p>
+        </div>
+        <div class="pcard reveal delay-3">
+          <div class="pcard-num">iii.</div>
+          <h4>Learning Differences</h4>
+          <p>Honest conversations about numeric dyslexia, the path through self-doubt, and how I turned a struggle into the reason I study engineering today.</p>
+        </div>
+      </div>
+
+      <div class="platform-cta reveal">
+        <blockquote>Your brain doesn't have to work the way the textbook expects. It just has to work.</blockquote>
+        <a href="https://www.instagram.com/growwith_stem/" target="_blank" rel="noopener">@growwith_stem →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST -->
+  <section class="request" id="request">
+    <div class="section-inner">
+      <div class="request-grid">
+        <div class="request-intro reveal">
+          <div class="section-eyebrow">— 03 / Appearances</div>
+          <h2>Request Miss MA <em>Teen Coed</em>.</h2>
+          <p>I'd be honored to be part of your event, school visit, ribbon cutting, or community gathering. Share the details and I'll respond within 3–5 days.</p>
+          <p>For Grow with STEM visits — schools, classrooms, libraries, and scout troops — please mention that in the form so I can prepare age-appropriate materials.</p>
+
+          <div class="event-list">
+            <h4>Available For</h4>
+            <div class="event-tags">
+              <span class="tag">Parades</span>
+              <span class="tag">Business Openings</span>
+              <span class="tag">Ribbon Cuttings</span>
+              <span class="tag">Festivals & Fairs</span>
+              <span class="tag">School Visits</span>
+              <span class="tag">Classroom Talks</span>
+              <span class="tag">Career Days</span>
+              <span class="tag">Library Programs</span>
+              <span class="tag">Scout Troops</span>
+              <span class="tag">Girl Scout Badge Days</span>
+              <span class="tag">STEM Workshops</span>
+              <span class="tag">Fundraisers</span>
+              <span class="tag">Charity Events</span>
+              <span class="tag">Galas & Banquets</span>
+              <span class="tag">Speaking Engagements</span>
+              <span class="tag">Panel Appearances</span>
+              <span class="tag">Press & Media</span>
+              <span class="tag">Photo Ops</span>
+              <span class="tag">Holiday Events</span>
+              <span class="tag">Sporting Events</span>
+              <span class="tag">Community Meetings</span>
+              <span class="tag">Volunteer Days</span>
+              <span class="tag">Birthday Visits</span>
+              <span class="tag">Hospital Visits</span>
+              <span class="tag">Senior Center Visits</span>
+              <span class="tag">Other</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="appearanceForm" onsubmit="handleSubmit(event)">
+          <div class="field">
+            <label>Your Name <span class="req">*</span></label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Email <span class="req">*</span></label>
+              <input type="email" name="email" required />
+            </div>
+            <div class="field">
+              <label>Phone</label>
+              <input type="tel" name="phone" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Organization / Affiliation</label>
+            <input type="text" name="org" />
+          </div>
+          <div class="field">
+            <label>Event Type <span class="req">*</span></label>
+            <select name="eventType" id="eventType" required onchange="toggleOther()">
+              <option value="">Select one…</option>
+              <option>Parade</option>
+              <option>Business Opening / Ribbon Cutting</option>
+              <option>Festival or Fair</option>
+              <option>School Visit / Classroom Talk</option>
+              <option>Career Day</option>
+              <option>Library Program</option>
+              <option>Scout Troop Visit</option>
+              <option>Girl Scout Badge Day</option>
+              <option>STEM Workshop</option>
+              <option>Speaking Engagement</option>
+              <option>Panel Appearance</option>
+              <option>Charity / Fundraiser</option>
+              <option>Gala or Banquet</option>
+              <option>Press / Media Interview</option>
+              <option>Photo Op</option>
+              <option>Holiday Event</option>
+              <option>Sporting Event</option>
+              <option>Community Meeting</option>
+              <option>Volunteer Day</option>
+              <option>Birthday Visit</option>
+              <option>Hospital Visit</option>
+              <option>Senior Center Visit</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field" id="otherField" style="display: none;">
+            <label>Please Describe Your Event Type <span class="req">*</span></label>
+            <input type="text" name="eventTypeOther" id="eventTypeOther" placeholder="Tell me what kind of event this is…" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Event Date <span class="req">*</span></label>
+              <input type="date" name="date" required />
+            </div>
+            <div class="field">
+              <label>Event Time</label>
+              <input type="time" name="time" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Location / Venue <span class="req">*</span></label>
+            <input type="text" name="location" placeholder="City, MA" required />
+          </div>
+          <div class="field">
+            <label>Tell me about the event <span class="req">*</span></label>
+            <textarea name="details" required placeholder="Audience size, age range, expected duration, what you'd like me to do or speak about, and anything else I should know."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" id="submitBtn">Submit Request <span class="arrow">→</span></button>
+          <p class="form-note">I review every request personally and respond within 3–5 days.</p>
+          <div class="form-success" id="formSuccess">
+            <p>Thank you — your request has been received. I'll be in touch within 3–5 days.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="connect" id="connect">
+    <div class="section-inner">
+      <div class="connect-head">
+        <div class="reveal">
+          <div class="section-eyebrow">— 04 / Connect</div>
+          <h2>Stay in <em>touch.</em></h2>
+        </div>
+        <p class="connect-tag reveal delay-1">Follow along through the reign, the road to nationals, and every classroom in between.</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/alexisfryepageantry/" target="_blank" rel="noopener" class="social reveal delay-1">
+          <div class="social-label">— Pageantry</div>
+          <div>
+            <div class="social-handle">@alexisfryepageantry</div>
+            <div class="social-arrow">Follow on Instagram →</div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/growwith_stem/" target="_blank" rel="noopener" class="social reveal delay-2">
+          <div class="social-label">— Grow with STEM</div>
+          <div>
+            <div class="social-handle">@growwith_stem</div>
+            <div class="social-arrow">Follow on Instagram →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-mark">Alexis <em>Frye.</em></div>
+      <p>Miss Massachusetts Teen Coed · 2026</p>
+    </div>
+    <div class="footer-meta">
+      © 2026 · All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<script>
+  // === FORM SUBMISSION (Formspree) ===
+  // Submissions go through Formspree, which forwards them to your inbox
+  // WITHOUT exposing your email address publicly.
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjwzpkr';
+
+  function toggleOther() {
+    const sel = document.getElementById('eventType');
+    const other = document.getElementById('otherField');
+    const otherInput = document.getElementById('eventTypeOther');
+    if (sel.value === 'Other') {
+      other.style.display = 'block';
+      otherInput.required = true;
+    } else {
+      other.style.display = 'none';
+      otherInput.required = false;
+      otherInput.value = '';
+    }
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('submitBtn');
+    const success = document.getElementById('formSuccess');
+
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const formData = new FormData(form);
+
+    if (formData.get('eventType') === 'Other' && formData.get('eventTypeOther')) {
+      formData.set('eventType', 'Other: ' + formData.get('eventTypeOther'));
+    }
+    formData.set('_subject', 'Appearance Request — ' + formData.get('eventType') + ' on ' + formData.get('date'));
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        document.getElementById('otherField').style.display = 'none';
+        success.classList.add('show');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        btn.innerHTML = 'Submit Request <span class="arrow">→</span>';
+        btn.disabled = false;
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  }
+
+  document.querySelectorAll('#primary-nav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('primary-nav').classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
